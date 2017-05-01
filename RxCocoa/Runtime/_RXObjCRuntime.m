@@ -399,7 +399,7 @@ IMP __nonnull RX_default_target_implementation() {
     BUILD_EXAMPLE_METHOD(return_value, ## __VA_ARGS__)                                                                                                  \
     SWIZZLE_METHOD(return_value, GENERATE_OBSERVE_METHOD_DECLARATION(return_value, ## __VA_ARGS__), OBSERVE_BODY, OBSERVE_INVOKED_BODY, ## __VA_ARGS__) \
                                                                                                                                                         \
-    +(void)load {                                                                                                                                       \
+    +(void)initialize {                                                                                                                                       \
        __unused SEL exampleSelector = @selector(BUILD_EXAMPLE_METHOD_SELECTOR(return_value, ## __VA_ARGS__));                                           \
        [self registerOptimizedObserver:^BOOL(RXObjCRuntime * __nonnull self, Class __nonnull class,                                                     \
             SEL __nonnull selector, NSError **__nonnull error) {                                                                                        \
